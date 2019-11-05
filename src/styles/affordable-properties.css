@@ -1,0 +1,35 @@
+/* affordable properties */
+
+.affordable-properties a:hover {
+  text-decoration: none;
+}
+
+.affordable-properties .title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.affordable-properties .title > select {
+  margin-left: 20px;
+}
+
+.affordable-properties .property {
+  font-size: 16px;
+  color: black;
+}
+
+.affordable-properties.property > * {
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+.property__description {
+  font-weight: 600;
+}
+
+.property__property-count > svg {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}

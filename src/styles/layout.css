@@ -1,0 +1,139 @@
+/* Layout */
+@import url('./desktop-nav.css');
+@import url('./layout-helpers.css');
+#header {
+  width: 100%;
+}
+
+.header__toolbar {
+  min-height: 60px;
+  position: relative;
+}
+
+.header__toolbar-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.header__mobile-nav-toggle {
+  position: relative;
+  cursor: pointer;
+  text-indent: -9999px;
+  transition: opacity, -webkit-filter 0.15s linear;
+  transition: opacity, filter 0.15s linear;
+  transition: opacity, filter 0.15s linear, -webkit-filter 0.15s linear;
+  border-radius: 0;
+  width: 60px;
+}
+
+.header__logo {
+  padding-right: 23px;
+  float: left;
+  text-decoration: none;
+  position: relative;
+  top: 20px;
+}
+
+.header__logo .domain-logo__wrapper {
+  width: 80px;
+  height: auto;
+}
+
+.domain-home__place-an-ad-wrap {
+  position: absolute;
+  top: 13px;
+  right: 0;
+  text-align: right;
+}
+
+.domain-home__place-an-ad-link {
+  display: inline-block;
+  padding: 0 20px;
+  border-radius: 3px 0 0 3px;
+  background: #e6e9ed;
+  color: #071939;
+  line-height: 30px;
+  text-decoration: none;
+}
+
+.domain-home__place-an-ad-link:active,
+.domain-home__place-an-ad-link:focus,
+.domain-home__place-an-ad-link:hover {
+  background: #0ea800;
+  color: #fff;
+  text-decoration: none;
+}
+
+@media (min-width: 624px) {
+  .domain-home__logo-wrapper svg {
+    margin-top: 20px;
+    width: 100px;
+  }
+  .domain-home__ads,
+  .domain-home__affordable-listing-cards,
+  .domain-home__app-promoter,
+  .domain-home__bonzai-ads,
+  .domain-home__domain-promotion,
+  .domain-home__dream-homes,
+  .domain-home__featured-projects,
+  .domain-home__latest-news,
+  .domain-home__main-area,
+  .domain-home__logo-wrapper {
+    max-width: 1021px;
+    padding: 0 18px;
+    margin: 0 auto 36px;
+  }
+
+  .domain-home__main-area {
+    margin: 0 auto;
+  }
+
+  .domain-home__background {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    height: 355px;
+  }
+
+  .domain-home__background-image {
+    background-image: url('https://static.domain.com.au/content/web/residential/hero/homepage-12-optimised-mobile.jpg');
+    background-size: cover;
+    background-position: center center;
+    width: 100vw;
+    height: 100%;
+  }
+}
+
+@media (min-width: 1021px) {
+  .header__toolbar-inner {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 10px 16px;
+  }
+
+  .header__mobile-nav-toggle {
+    display: none;
+  }
+
+  .header__logo {
+    top: 8px;
+  }
+
+  .header__logo .domain-logo__wrapper,
+  .header__logo .domain-logo__wrapper svg {
+    width: 98px;
+    height: auto;
+    margin: 0;
+  }
+
+  .domain-home__place-an-ad-link {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1022px) {
+  .domain-home__place-an-ad-wrap {
+    top: 120px;
+  }
+}

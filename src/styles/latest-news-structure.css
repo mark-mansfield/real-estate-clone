@@ -1,0 +1,38 @@
+/* latest news */
+.latest-news {
+  padding-bottom: 40px;
+}
+
+.latest-news h2 {
+  margin-bottom: 54px;
+}
+
+.latest-news__wrapper {
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.news-card {
+  display: block;
+  width: 232px;
+  height: 153px;
+}
+
+.news-card a {
+  color: rgb(60, 71, 91);
+}
+
+.news-card a:hover {
+  color: rgb(14, 168, 0);
+  text-decoration: none;
+}
+
+.news-card__image {
+  border-radius: 3px;
+}
+
+.news-card__text {
+  margin-top: 1rem;
+  line-height: 22px;
+}

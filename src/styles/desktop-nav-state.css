@@ -1,0 +1,63 @@
+/* desktop nav state css */
+
+.desktop-nav__menu-option-link,
+.desktop-nav__menu-option-link:hover {
+  color: white;
+  font-weight: 600;
+}
+
+/* increased specificity on purpose */
+.desktop-nav__list li:hover {
+  box-shadow: none;
+}
+
+/* because the nav link width is now 100% */
+.no-svg-nav-link:before {
+  content: '';
+  position: absolute;
+  width: calc(80%) !important;
+  height: 3px;
+  bottom: -10px;
+  background-color: white;
+  visibility: visible;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+/* this nav link width needs to be the width of the text only , not text + svg */
+.desktop-nav__menu-option-link:before {
+  content: '';
+  position: absolute;
+  width: calc(85% - 30px);
+  height: 3px;
+  bottom: -10px;
+  background-color: white;
+  visibility: visible;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.header-member__sign-in:before,
+.header-member__sign-up:before {
+  content: '';
+  position: absolute;
+  width: 48px !important;
+  height: 3px;
+  bottom: 18px;
+  background-color: white;
+  visibility: visible;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.desktop-nav__menu-option-link:hover:before,
+.no-svg-nav-link:hover:before,
+.header-member__sign-in:hover:before,
+.header-member__sign-up:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}

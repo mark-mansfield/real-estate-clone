@@ -1,0 +1,95 @@
+/* Footer structure */
+
+.footer ul li:hover {
+  box-shadow: none;
+}
+
+.flex-col ul {
+  padding-inline-start: 0px;
+}
+
+[data-testid='app-promoter-footer-strip-banner-link'] {
+  display: inline;
+}
+
+[data-testid='desktop-nav'] li a {
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  border-bottom: 2px solid transparent;
+  text-decoration: none;
+  transition: border-bottom-color 0.2s;
+}
+
+[data-testid='agency-centre-link'] {
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  border-bottom: 2px solid transparent;
+  text-decoration: none;
+  transition: border-bottom-color 0.2s;
+}
+
+[data-testid='agent-admin-link'] {
+  border-bottom: none;
+}
+
+[data-testid='agency-nav'] li a:hover,
+[data-testid='desktop-nav'] li a:hover {
+  color: white;
+  border-bottom-color: #fafbfc;
+}
+
+.button.is-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button.is-ghost {
+  border-color: #fff;
+  background: none;
+  color: #fafbfc;
+}
+
+.button.is-ghost:hover {
+  border-color: #fff;
+  background-color: hsla(0, 0%, 100%, 0.2);
+  color: #fafbfc;
+}
+
+.button.is-small {
+  padding: 2px 20px;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.button.is-a-tag,
+.button.is-a-tag:not(.is-link).is-active,
+.button.is-a-tag:not(.is-link):focus,
+.button.is-a-tag:not(.is-link):hover {
+  text-decoration: none;
+}
+
+.button {
+  display: inline-block;
+  padding: 8px 26px;
+  border: 1px solid transparent;
+  transition: background-color 0.2s linear;
+  border-radius: 3px;
+  font: normal 16px/24px sans-serif;
+  text-align: center;
+  cursor: pointer;
+  -webkit-appearance: none;
+  font-weight: 700;
+}
+
+@media (min-width: 1021px) {
+  .footer {
+    width: 100vw;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}

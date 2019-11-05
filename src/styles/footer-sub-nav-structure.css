@@ -1,0 +1,194 @@
+/* footer-sub-nav-structure */
+@media (min-width: 1021px) {
+  .footer__sub-nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 54px;
+    background-color: #071939;
+  }
+
+  .footer-sub-nav-bar__wrapper {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    padding: 0 24px;
+    max-width: 1280px;
+  }
+
+  .footer-sub-nav-bar__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .footer__sub-nav-bar .sub-nav__left,
+  .footer__sub-nav-bar .sub-nav__right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .sub-nav-left__svg-container {
+    fill: #7e8594;
+    width: 27px;
+    height: 27px;
+    display: inline-block;
+    margin: 2px 5px 0 0;
+    vertical-align: top;
+  }
+
+  .sub-nav-left__svg-container svg {
+    fill: #7e8594 !important;
+    width: 27px;
+    height: 27px;
+  }
+
+  .sub-nav-left__dropdown {
+    position: relative;
+    margin-left: 5px;
+    margin-right: 15px;
+  }
+
+  .sub-nav-left__dropdown ul li a,
+  .sub-nav-right__dropdown ul li a {
+    color: #7e8594;
+    font-size: 14px;
+  }
+  .sub-nav-left__dropdown ul li a:hover,
+  .sub-nav-right__dropdown ul li a:hover {
+    color: #fff;
+  }
+  .sub-nav-right__dropdown {
+    position: relative;
+    width: 178px;
+    margin-right: 15px;
+  }
+
+  .sub-nav-right__dropdown h4 {
+    color: white;
+  }
+
+  .sub-nav-left__dropdown ul,
+  .sub-nav-right__dropdown ul {
+    -webkit-transition: border-color 0.2s linear;
+    transition: border-color 0.2s linear;
+    background-color: #071939;
+    border: 1px solid #fff;
+    border-bottom: 0;
+    border-radius: 3px 3px 0 0;
+    bottom: calc(100% - 19px);
+    clear: left;
+    float: left;
+    left: 0;
+    position: absolute;
+    z-index: 301;
+    padding: 10px;
+  }
+
+  .sub-nav-icon__links {
+    display: flex;
+    margin: 0px;
+    padding-inline-start: 0px;
+  }
+
+  .sub-nav-left__dropdown .button.is-ghost,
+  .sub-nav-right__dropdown .button.is-ghost {
+    -webkit-transition: border-color 0.2s linear;
+    transition: border-color 0.2s linear;
+    border-color: #515b6e;
+    outline: none;
+    width: 100%;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 2px 0px 2px 12px;
+    background: none;
+    color: #fafbfc;
+  }
+
+  .sub-nav-left__dropdown .button.is-ghost:focus,
+  .sub-nav-right__dropdown .button.is-ghost:focus {
+    border-color: white;
+  }
+
+  .sub-nav-left__dropdown .button.is-ghost:hover {
+    border-color: #fff;
+  }
+
+  .button.is-a-tag,
+  .button.is-a-tag:not(.is-link).is-active,
+  .button.is-a-tag:not(.is-link):focus,
+  .button.is-a-tag:not(.is-link):hover {
+    text-decoration: none;
+  }
+
+  .button.is-regular {
+    cursor: pointer;
+    background-color: #071939;
+    padding: 0 4px;
+  }
+
+  .button.is-regular:hover,
+  .button.is-regular:focus {
+    background-color: #0c9700;
+  }
+
+  .button.is-regular:hover .button__icon,
+  .button.is-regular:focus .button__icon {
+    color: #ffffff;
+    opacity: 1;
+  }
+
+  .footer__sub-nav-bar .button.is-ghost > .button__label {
+    font-size: 12px;
+    color: #7e8594;
+    font-weight: 400;
+  }
+
+  .footer__sub-nav-bar .button.is-ghost .button__icon svg {
+    -webkit-transition: border-color 0.2s linear;
+    transition: border-color 0.2s linear;
+    color: #515b6e;
+  }
+
+  .button__label + .button__icon.is-right {
+    padding-left: 10px;
+  }
+
+  .button.is-regular .button__label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    -webkit-clip: rect(1px, 1px, 1px, 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    border: 0;
+    overflow: hidden;
+    -webkit-clip-path: inset(100%);
+    clip-path: inset(100%);
+    -webkit-clip-path: none;
+  }
+
+  .button.is-regular .button__icon {
+    color: #7e8594;
+    padding-left: 0;
+    margin: 3px 0;
+    opacity: 0.4;
+  }
+
+  .left-icon svg {
+    width: 134px;
+    height: 19px;
+  }
+
+  .right-icon svg {
+    width: 61px;
+    height: 19px;
+  }
+}

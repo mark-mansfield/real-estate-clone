@@ -1,0 +1,40 @@
+/* subsidiary navigation */
+
+.subsidiary {
+  background-color: #f2f5f7;
+}
+
+/* svg color */
+.svg-fill-color,
+.subsidiary__column a {
+  color: #7e8594;
+  fill: #7e8594;
+}
+.subsidiary__column {
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  height: 24px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.subsidiary__column-link-wrapper {
+  display: flex;
+  padding-right: 8px;
+  margin-right: 8px;
+  border-right: 1px solid #d0d3d9;
+}
+
+.subsidiary__column a {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.subsidiary__column-link-wrapper > svg {
+  width: 81px;
+  height: 18px;
+  margin-top: 2px;
+  overflow: none;
+  vertical-align: none;
+}

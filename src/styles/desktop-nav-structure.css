@@ -1,0 +1,108 @@
+/* nav structure  */
+
+.header.is-transparent .desktop-nav__menu-option-link,
+.desktop-nav__member-panel .header-member__sign-in,
+.desktop-nav__member-panel .header-member__sign-up {
+  background: 0 !important;
+  color: #fff !important;
+  border: none;
+}
+
+.desktop-nav {
+  height: 44px;
+}
+
+.desktop-nav__member-panel {
+  padding-left: 6px;
+  float: right;
+}
+
+.desktop-nav__list {
+  float: right;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.desktop-nav__menu-option {
+  position: relative;
+  float: left;
+}
+
+.desktop-nav__menu-option-link {
+  padding: 9px 10px 9px 10px;
+}
+
+.desktop-nav__member-panel {
+  padding-left: 6px;
+  float: right;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border-left: 1px solid rgba(230, 233, 237, 0.5);
+}
+
+.header-member__sign-in-container {
+  border-left-color: rgba(230, 233, 237, 0.5) !important;
+}
+
+.desktop-nav ul {
+  margin: 0px;
+}
+
+/* because i needed greater specificity */
+.desktop-nav__list li .desktop-nav__dropdown-content {
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  border: 1px solid #f2f5f7;
+  background: #fff;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  z-index: 50;
+  width: 210px;
+  padding-left: 18px;
+  padding-right: 18px;
+  margin-top: 30px;
+  margin-left: -105px;
+}
+
+.desktop-nav__dropdown-content:before {
+  margin-left: -7px;
+  border: 7px solid transparent;
+  border-bottom-color: #fff;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  content: '';
+  pointer-events: none;
+}
+
+.desktop-nav__dropdown-content:after {
+  margin-left: -6px;
+  border: 6px solid transparent;
+  border-bottom-color: #fff;
+}
+
+.desktop-nav__dropdown-item:not(:last-child) .desktop-nav__dropdown-item-link {
+  border-bottom: 1px solid #d0d3d9;
+}
+
+.desktop-nav__dropdown-item-link {
+  display: block;
+  padding: 10px 0;
+  color: #3c475b;
+  line-height: 24px;
+  text-decoration: none;
+}
+
+.desktop-nav__dropdown-item-link.is-selected,
+.desktop-nav__dropdown-item-link:active,
+.desktop-nav__dropdown-item-link:focus,
+.desktop-nav__dropdown-item-link:hover {
+  background-color: #fff;
+  color: #0ea800;
+  text-decoration: none;
+}

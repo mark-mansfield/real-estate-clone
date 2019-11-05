@@ -1,68 +1,98 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+##authenticate
+We use the client_credentials auth type
+To use the API we must get an access token first using our secret and client ID
+@param clientId: the id of the project created  the domain developer account
+@param secret: a secret set up for this project
 
-## Available Scripts
+```javascript
+const DOMAIN_PROJECT_CLIENT_ID = 'client_5709bdf41500dd4426e9a2bba8dc791d';
 
-In the project directory, you can run:
 
-### `yarn start`
+const DOMAIN_PROJECT_SECRET = 'secret_42e45d9ac28d57752ec22ac4929ca135';
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+getAccessToken(clientId, secret) {
+ // build a string of creds
+    // basic auth needs to use base64 encoding on creds
+    const data = querystring.stringify({
+      grant_type: 'client_credentials',
+      scope: 'api_agencies_read api_listings_read'
+    });
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+    return axios
+      .post('https://auth.domain.com.au/v1/connect/token', data, {
+        headers: {
+          Authorization: `Basic ${base64(`${clientId}:${secret}`)}`,
+          'Content-Type': 'application/x-www-form-urlencoded'
+        }
+      })
+      .then(result => {
+        setHasToken(true);
+        setSuccess(true);
+        localStorage.setItem('_nekot', result.data.access_token);
+      })
+      .catch(err => {
+        setError(true);
+        console.error(err.response.data);
+      });
+}
+```
 
-### `yarn test`
+```javascript
+// do a simple query of listing for rent
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+```
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+##Search query params model taken from live api docs
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+[https://developer.domain.com.au/docs/live/#/Listings/Listings_DetailedResidentialSearch](go to api)
 
-### `yarn eject`
+```
+listingType	string
+Enum:
+Array [ 5 ]
+propertyTypes	[string
+Enum:
+[ AcreageSemiRural, ApartmentUnitFlat, Aquaculture, BlockOfUnits, CarSpace, DairyFarming, DevelopmentSite, Duplex, Farm, FishingForestry, NewHomeDesigns, House, NewHouseLand, IrrigationServices, NewLand, Livestock, NewApartments, Penthouse, RetirementVillage, Rural, SemiDetached, SpecialistFarm, Studio, Terrace, Townhouse, VacantLand, Villa, Cropping, Viticulture, MixedFarming, Grazing, Horticulture, Equine, Farmlet, Orchard, RuralLifestyle ]
+]
+propertyFeatures	[string]
+Enum:
+[ AirConditioning, BuiltInWardrobes, CableOrSatellite, Ensuite, Floorboards, Gas, InternalLaundry, PetsAllowed, SecureParking, SwimmingPool, Furnished, GroundFloor, WaterViews, NorthFacing, CityViews, IndoorSpa, Gym, AlarmSystem, Intercom, BroadbandInternetAccess, Bath, Fireplace, SeparateDiningRoom, Heating, Dishwasher, Study, TennisCourt, Shed, FullyFenced, BalconyDeck, GardenCourtyard, OutdoorSpa, DoubleGlazedWindows, EnergyEfficientAppliances, WaterEfficientAppliances, WallCeilingInsulation, RainwaterStorageTank, GreywaterSystem, WaterEfficientFixtures, SolarHotWater, SolarPanels ]
+]
+listingAttributes	[string
+Enum:
+[ HasPhotos, HasPrice, NotUpForAuction, NotUnderContract, MarkedAsNew ]
+]
+propertyEstablishedType	string
+Enum:
+[ Any, New, Established ]
+minBedrooms	number($float)
+maxBedrooms	number($float)
+minBathrooms	number($float)
+maxBathrooms	number($float)
+minCarspaces	integer($int32)
+maxCarspaces	integer($int32)
+minPrice	integer($int32)
+maxPrice	integer($int32)
+minLandArea	integer($int32)
+maxLandArea	integer($int32)
+advertiserIds	[integer($int32)]
+adIds	[integer($int32)]
+excludeAdIds	[integer($int32)]
+locations	[Domain.SearchService.v2.Model.DomainSearchWebApiV2ModelsSearchLocation{...}]
+locationTerms	string
+keywords	[string]
+newDevOnly	boolean
+inspectionFrom	string($date-time)
+inspectionTo	string($date-time)
+auctionFrom	string($date-time)
+auctionTo	string($date-time)
+ruralOnly	boolean
+excludePriceWithheld	boolean
+sort	Domain.SearchService.v2.Model.SystemNullableDomainSearchWebApiV2ModelsSortBy{...}
+page	integer($int32)
+pageSize	integer($int32)
+geoWindow	Domain.SearchService.v2.Model.DomainSearchWebApiV2ModelsGeoWindow{...}
+updatedSince	string($date-time)```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

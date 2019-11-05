@@ -1,0 +1,12 @@
+/* layout utilities */
+
+.inline-block {
+  display: inline-block;
+}
+
+.flex-col {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+}

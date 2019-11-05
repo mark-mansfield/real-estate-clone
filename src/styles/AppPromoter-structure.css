@@ -1,0 +1,31 @@
+/* App Promoter */
+
+@media (min-width: 624px) {
+  .domain-home__app-promoter {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 625px) {
+  .app-promoter__wrapper {
+    max-height: 750px;
+  }
+
+  .app-promoter-footer-strip-content-wrap {
+    display: flex;
+    flex-flow: row-reverse;
+    align-items: center;
+    max-width: 975px;
+    margin: auto;
+  }
+}
+
+@media (min-width: 1021px) {
+  .domain-home__app-promoter {
+    max-width: 1021px;
+  }
+
+  .app-promoter__wrapper {
+    max-height: 800px;
+  }
+}
